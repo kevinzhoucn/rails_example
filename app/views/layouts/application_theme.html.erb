@@ -10,16 +10,52 @@
 
 <body role="document">
   <div class="container navbar" data-desc="fixed-navbar">
-    <%= render :partial => 'common/theme/top_nav' %>
-  </div>    
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">资质网</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">首页</a></li>
+            <li><a href="#about">关于我们</a></li>
+            <li><a href="#contact">联系我们</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">选择城市 <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">北京</a></li>
+                <li><a href="#">河北</a></li>
+                <li><a href="#">山东</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">添加城市</li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+    
 
     <div class="container theme-showcase" role="main">
-      <div data-desc="jumbotron">
-        <%= render :partial => 'common/theme/jumbotron' %>
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1>Hello, world!</h1>
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more »</a></p>
       </div>
-      <div class="row" data-desc="content">
-        <%= render :partial => 'common/theme/content' %>
-      </div>
+
+
 
       <div class="page-header">
         <h1>Buttons</h1>
