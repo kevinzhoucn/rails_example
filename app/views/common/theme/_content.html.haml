@@ -1,16 +1,3 @@
-/ .panel.panel-primary
-/   .panel-heading{style: "font-weight: bold;dispaly:block"} 信息分类
-/   .panel-body
-/     - 6.times do |num|
-/       .span2
-/         %h4 一级建造师
-/         %ul
-/           - num.times do
-/             %li 建筑工程
-/             %li 市政公用
-/         %p
-/           %a.btn.btn-default.btn-xs{href: "#", role: "button"} 查看更多 »
-
 .media.panel.panel-success
   .panel-heading 信息分类
   .media-body.panel-body
@@ -24,7 +11,7 @@
               %span.badge.badge-info= sub_category.posts.count
 
 .media.panel.panel-info
-  .panel-heading 信息分类
+  .panel-heading 公司信息
   .media-body.panel-body
     - 3.times do
       .span4
@@ -33,7 +20,7 @@
     
 
 .media.panel.panel-warning
-  .panel-heading 信息分类
+  .panel-heading 个人信息
   .media-body.panel-body
     - 3.times do
       .span4
