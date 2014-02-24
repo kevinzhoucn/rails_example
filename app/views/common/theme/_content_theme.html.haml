@@ -1,0 +1,33 @@
+.container
+  .panel.panel-success
+    .panel-heading{style: "font-weight: bold"} 信息分类
+    .panel-body
+      - 6.times do |num|
+        .col-md-2{style: "float:left"}
+          %h4 一级建造师
+          %ul
+            - num.times do
+              %li 建筑工程
+              %li 市政公用
+          %p
+            %a.btn.btn-default.btn-xs{href: "#", role: "button"} 查看更多 »
+  .panel.panel-info
+    .panel-heading{style: "font-weight: bold"} 公司聘证信息
+    .panel-body
+      - 2.times do 
+        .col-md-5{style: "float:left"}
+          %ul
+            - 5.times do 
+              %li 北京公司聘证信息发布2014-02-20        
+          %p
+            %a.btn.btn-default.btn-xs{href: "#", role: "button"} 查看更多 »
+  .panel.panel-warning
+    .panel-heading{style: "font-weight: bold"} 个人挂证信息
+    .panel-body
+      - 2.times do 
+        .col-md-5{style: "float:left"}
+          %ul
+            - 5.times do 
+              %li 个人挂证信息发布2014-02-20        
+          %p
+            %a.btn.btn-default.btn-xs{href: "#", role: "button"} 查看更多 »

@@ -1,0 +1,10 @@
+.media.panel.panel-success
+  .panel-heading 选择分类
+  .media-body.panel-body
+    - @categories.each do |category|
+      .span2
+        %h4= category.name
+        %ul{style: "list-style: none;margin-left: 10px"}
+          - category.sub_categories.each do |sub_category|
+            %li
+              =link_to sub_category.name, { controller: "posts", action: "new", sub_category: sub_category.id}

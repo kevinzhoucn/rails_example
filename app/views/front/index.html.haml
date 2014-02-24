@@ -1,2 +1,5 @@
-%h1 Front#index
-%p Find me in app/views/front/index.html.haml
+.container.theme-showcase{role: "main"}
+  .row-fluid{data: {desc: "hero_unit"} }
+    = render partial: 'common/theme/hero_unit'
+  .row-fluid{data: {desc: "content"} }
+    = render partial: 'common/theme/content', object: @categories

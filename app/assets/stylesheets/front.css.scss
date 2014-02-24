@@ -2,6 +2,101 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//body {
+//  padding-top: 60px;
+//  padding-bottom: 40px;
+//}
+
+.container-fixed-navbar {
+  min-height: 50px;
+}
+
+.panel{
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.panel-default {
+  border-color: #ddd;
+}
+.panel-body {
+  padding: 20px;
+}
+
+.panel-primary {
+  border-color: #428bca;
+}
+
+.panel-success {
+  border-color: #d6e9c6;
+}
+.panel-success>.panel-heading {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  font-weight: bold;
+  font-size: 120%
+}
+
+.panel-primary>.panel-heading {
+  color: #fff;
+  background-color: #428bca;
+  border-color: #428bca;
+}
+
+.panel-info {
+  border-color: #bce8f1;
+}
+
+.panel-info>.panel-heading {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  font-weight: bold;
+  font-size: 120%
+}
+
+.panel-warning {
+  border-color: #faebcc;
+}
+
+.panel-warning>.panel-heading {
+  background-image: -webkit-linear-gradient(top,#fcf8e3 0,#faf2cc 100%);
+  background-image: linear-gradient(to bottom,#fcf8e3 0,#faf2cc 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffcf8e3', endColorstr='#fffaf2cc', GradientType=0);
+}
+
+.panel-warning>.panel-heading {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  font-weight: bold;
+  font-size: 120%
+}
+
+.panel-heading {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+.panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  color: inherit;
+}
+
+.panel-body:before, .panel-body:after {
+  content: "";
+  display: table;
+}
+
 #footer {
   font-size: 90%;
   line-height: 12px;

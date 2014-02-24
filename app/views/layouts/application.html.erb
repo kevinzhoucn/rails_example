@@ -2,25 +2,30 @@
 <html>
 <head>
   <title>RailsExamples</title>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-  <%= stylesheet_link_tag    "application", :media => "all" %>  
+  <link href="<%= root_url %>css/bootstrap.min.css" rel="stylesheet">
+  <link href="<%= root_url %>css/bootstrap-responsive.min.css" rel="stylesheet">
+  <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= csrf_meta_tags %>
 </head>
 
 <body role="document">
-  <div class="container navbar" data-desc="fixed-navbar">
+  <div class="container-fixed-navbar" data-desc="fixed-navbar">
     <%= render :partial => 'common/theme/top_nav' %>
   </div>    
+  <div class="container" >
+    <%= yield %>
+  </div>
 
+<!--
   <div class="container theme-showcase" role="main">
     <div data-desc="jumbotron">
-      <%= render :partial => 'common/theme/jumbotron' %>
+      <%#= render :partial => 'common/theme/jumbotron' %>
     </div>
     <div class="row" data-desc="content">
-      <%= render :partial => 'common/theme/content' %>
+      <%#= render :partial => 'common/theme/content' %>
     </div>
   </div>
+--> 
 
   <div class="container">
     <footer>
@@ -30,8 +35,8 @@
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
+  <script src="<%= root_url %>js/jquery-1.11.0.min.js"></script>
   <%= javascript_include_tag "application" %>
-  <script src="js/jquery-1.11.0.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <script src="<%= root_url %>js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -1,5 +1,11 @@
 RailsExamples::Application.routes.draw do
+  resources :posts
+  resources :sub_categories
+  resources :categories
+  
   get "front/index"
+  get "front/publish"
+  get "front/admin"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

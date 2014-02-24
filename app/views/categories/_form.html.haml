@@ -1,0 +1,13 @@
+= simple_form_for @category, html: {class: "form-horizontal"} do |f|
+  - if @category.errors.any?
+    #error_explanation
+      %h2 发生以下错误:
+      %ul
+        - @category.errors.full_messages.each do |msg|
+          %li= msg
+  = f.input :name, label: "类别名称"
+  .from-group
+    .controls
+      = f.submit "保存", class: 'btn btn-info'
+      = link_to '取消', categories_path, class: 'btn btn-danger'
+

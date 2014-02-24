@@ -1,0 +1,21 @@
+.container  
+  .span7
+    %h1 子级类别列表
+    %p
+      = link_to '新建子级分类', new_sub_category_path, class: 'btn btn-info'
+    %table.table.table-striped
+      %tr
+        %th 名称
+        %th 所属类别
+        %th 操作
+
+      - @sub_categories.each do |sub_category|
+        %tr
+          %td= link_to sub_category.name, sub_category
+          %td= link_to sub_category.cat_name, category_path(sub_category.category_id)
+          %td        
+            = link_to 'Edit', edit_sub_category_path(sub_category), class: 'btn btn-warning'
+            = link_to 'Destroy', sub_category, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
+
+  %br
+    

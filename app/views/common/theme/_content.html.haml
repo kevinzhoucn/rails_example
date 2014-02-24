@@ -1,33 +1,41 @@
-.container
-  .panel.panel-success
-    .panel-heading{style: "font-weight: bold"} 信息分类
-    .panel-body
-      - 6.times do |num|
-        .col-md-2
-          %h4 一级建造师
-          %ul
-            - num.times do
-              %li 建筑工程
-              %li 市政公用
-          %p
-            %a.btn.btn-default.btn-xs{href: "#", role: "button"} 查看更多 »
-  .panel.panel-info
-    .panel-heading{style: "font-weight: bold"} 公司聘证信息
-    .panel-body
-      - 2.times do 
-        .col-md-5
-          %ul
-            - 5.times do 
-              %li 北京公司聘证信息发布2014-02-20        
-          %p
-            %a.btn.btn-default.btn-xs{href: "#", role: "button"} 查看更多 »
-  .panel.panel-warning
-    .panel-heading{style: "font-weight: bold"} 个人挂证信息
-    .panel-body
-      - 2.times do 
-        .col-md-5
-          %ul
-            - 5.times do 
-              %li 个人挂证信息发布2014-02-20        
-          %p
-            %a.btn.btn-default.btn-xs{href: "#", role: "button"} 查看更多 »
+/ .panel.panel-primary
+/   .panel-heading{style: "font-weight: bold;dispaly:block"} 信息分类
+/   .panel-body
+/     - 6.times do |num|
+/       .span2
+/         %h4 一级建造师
+/         %ul
+/           - num.times do
+/             %li 建筑工程
+/             %li 市政公用
+/         %p
+/           %a.btn.btn-default.btn-xs{href: "#", role: "button"} 查看更多 »
+
+.media.panel.panel-success
+  .panel-heading 信息分类
+  .media-body.panel-body
+    - @categories.each do |category|
+      .span2
+        %h4= category.name
+        %ul{style: "list-style: none;margin-left: 10px"}
+          - category.sub_categories.each do |sub_category|
+            %li
+              =link_to sub_category.name, sub_category
+              %span.badge.badge-info= sub_category.posts.count
+
+.media.panel.panel-info
+  .panel-heading 信息分类
+  .media-body.panel-body
+    - 3.times do
+      .span4
+        - 6.times do
+          %p 北京公司聘证信息发布2014-02-20
+    
+
+.media.panel.panel-warning
+  .panel-heading 信息分类
+  .media-body.panel-body
+    - 3.times do
+      .span4
+        - 6.times do
+          %p 个人信息发布2014-02-20

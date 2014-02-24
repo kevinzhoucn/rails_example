@@ -1,0 +1,14 @@
+%p#notice= notice
+
+.span7  
+  %h1= @sub_category.name    
+  %table.table.table-striped
+    %tr
+      %th 名称
+      %th 操作
+    - @posts.each do |post|
+      %tr
+        %td= link_to post.title, post
+        %td        
+          = link_to '修改', edit_post_path(post), class: 'btn btn-warning'
+          = link_to '删除', post, :method => :delete, :data => { :confirm => '确定删除?' }, class: 'btn btn-danger'
