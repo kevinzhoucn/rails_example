@@ -7,6 +7,10 @@ RailsExamples::Application.routes.draw do
   get "front/publish"
   get "front/admin"
 
+  match '/:id' => 'categories#show', :constraints => { :id => /\d+/ }, :via => :get
+#  match '/:id' => 'categories#show', :constraints => { :id => /\d.+/ }, :via => :get
+#  match '/:abbr' => 'users#show'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
