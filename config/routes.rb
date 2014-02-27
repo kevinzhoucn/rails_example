@@ -12,6 +12,11 @@ RailsExamples::Application.routes.draw do
   get "front/region"
 
   match '/:abbr' => 'front#region', :constraints => { :abbr => /[a-z]{2,5}/ }, :via => :get
+
+  constraints(Subdomain) do
+    match '/' => 'front#region'
+  end
+
 #  match '/:id' => 'categories#show', :constraints => { :id => /\d.+/ }, :via => :get
 #  match '/:abbr' => 'users#show'
 

@@ -15,7 +15,6 @@
   <div class="container" >
     <%= yield %>
   </div>
-
 <!--
   <div class="container theme-showcase" role="main">
     <div data-desc="jumbotron">
@@ -26,17 +25,28 @@
     </div>
   </div>
 --> 
-
   <div class="container">
     <footer>
       <%= render :partial => 'common/theme/footer' %>
     </footer>
   </div>
+
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
-  <script src="<%= root_url %>js/jquery-1.11.0.min.js"></script>
-  <%= javascript_include_tag "application" %>
+  <script src="<%= root_url %>js/jquery-1.11.0.min.js"></script>  
   <script src="<%= root_url %>js/bootstrap.min.js"></script>
+  <%= javascript_include_tag "application" %>
+  <script src="<%= root_url %>ckeditor/ckeditor.js"></script>
+    <form>
+            <textarea name="editor1" id="editor1" rows="10" cols="80">
+                This is my textarea to be replaced with CKEditor.
+            </textarea>
+            <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'editor1' );
+            </script>
+        </form>
 </body>
 </html>
