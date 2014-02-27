@@ -1,4 +1,10 @@
 RailsExamples::Application.routes.draw do
+  resources :articles
+
+
+  resources :segments
+
+
   resources :provinces
 
 

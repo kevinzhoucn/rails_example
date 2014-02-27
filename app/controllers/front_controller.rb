@@ -1,6 +1,7 @@
 class FrontController < ApplicationController
   def index
     @categories = Category.all
+    @segments = Segment.all
   end
 
   def region
