@@ -1,4 +1,7 @@
 RailsExamples::Application.routes.draw do
+  resources :provinces
+
+
   resources :posts
   resources :sub_categories
   resources :categories
@@ -6,8 +9,9 @@ RailsExamples::Application.routes.draw do
   get "front/index"
   get "front/publish"
   get "front/admin"
+  get "front/region"
 
-  match '/:id' => 'categories#show', :constraints => { :id => /\d+/ }, :via => :get
+  match '/:abbr' => 'front#region', :constraints => { :abbr => /[a-z]{2,5}/ }, :via => :get
 #  match '/:id' => 'categories#show', :constraints => { :id => /\d.+/ }, :via => :get
 #  match '/:abbr' => 'users#show'
 

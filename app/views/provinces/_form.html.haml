@@ -1,0 +1,9 @@
+= simple_form_for(@province, html: {class: "form-horizontal"}) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name, label: "城市名:"
+    = f.input :abbr, label: "缩写:"
+
+  .form-actions
+    = f.button :submit, "创建城市"

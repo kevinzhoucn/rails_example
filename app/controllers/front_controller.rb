@@ -3,8 +3,13 @@ class FrontController < ApplicationController
     @categories = Category.all
   end
 
+  def region
+    @categories = Category.all
+    @province = Province.find_by_abbr(params[:abbr])
+  end
+
   def publish
-    @categories = Category.all    
+    @categories = Category.all
   end
 
   def admin
