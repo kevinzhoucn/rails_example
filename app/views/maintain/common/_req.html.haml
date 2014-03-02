@@ -1,0 +1,11 @@
+/ %script{:type => "text/javascript",
+/         :src  => "#{root_url}ckeditor/ckeditor.js"}
+%h3 提交一个新的改进方案
+%hr
+= render partial: "maintain/invite_articles/form", object: @maintain_invite_article, locals: {article_type: 'req'}
+
+/ %form
+/   %textarea{name: "editor1", id: "editor1", rows: "10", cols: "80"}
+/     This is my textarea to be replaced with CKEditor.
+/   :javascript
+/     CKEDITOR.replace('editor1');

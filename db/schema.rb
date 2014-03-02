@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140227143725) do
+ActiveRecord::Schema.define(:version => 20140301030210) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -25,6 +25,27 @@ ActiveRecord::Schema.define(:version => 20140227143725) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "maintain_customer_feedbacks", :force => true do |t|
+    t.string   "message",    :limit => 1000
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  create_table "maintain_invite_articles", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "invite_user_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "maintain_invite_users", :force => true do |t|
+    t.string   "name"
+    t.string   "code"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

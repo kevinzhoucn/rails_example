@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @maintain_invite_user.name
+%p
+  %b Code:
+  = @maintain_invite_user.code
+
+= link_to 'Edit', edit_maintain_invite_user_path(@maintain_invite_user)
+\|
+= link_to 'Back', maintain_invite_users_path
