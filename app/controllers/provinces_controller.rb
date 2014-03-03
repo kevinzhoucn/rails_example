@@ -44,7 +44,7 @@ class ProvincesController < ApplicationController
 
     respond_to do |format|
       if @province.save
-        format.html { redirect_to @province, notice: 'Province was successfully created.' }
+        format.html { redirect_to root_url, notice: t('.province_created_successfully') }
         format.json { render json: @province, status: :created, location: @province }
       else
         format.html { render action: "new" }

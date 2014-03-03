@@ -4,6 +4,11 @@
       .panel-heading= seg.name
       .media-body.panel-body
         %ul{style: "list-style: none"}
-          - seg.articles.region(@province.id).each do |art|
-            %li
-              =link_to art.title, art
+          - if @province.nil?
+            - seg.articles.each do |art|
+              %li
+                =link_to art.title, art
+          - else
+            - seg.articles.region(@province.id).each do |art|
+              %li
+                =link_to art.title, art

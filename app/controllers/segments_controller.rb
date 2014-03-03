@@ -44,7 +44,7 @@ class SegmentsController < ApplicationController
 
     respond_to do |format|
       if @segment.save
-        format.html { redirect_to @segment, notice: 'Segment was successfully created.' }
+        format.html { redirect_to root_url, notice: t('.segment_created_successfully') }
         format.json { render json: @segment, status: :created, location: @segment }
       else
         format.html { render action: "new" }
