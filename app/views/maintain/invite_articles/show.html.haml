@@ -5,7 +5,7 @@
   = @maintain_invite_article.title
 %p
   %b Content:
-  = @maintain_invite_article.content
+  = @maintain_invite_article.content.html_safe
 %p
   %b Invite user:
   = @maintain_invite_article.invite_user_id

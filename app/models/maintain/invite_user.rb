@@ -13,6 +13,10 @@ class Maintain::InviteUser < ActiveRecord::Base
   # end
 
   def (Maintain::InviteUser).authenticate(sal, name, code)
+    sal = sal.chomp.downcase
+    name = name.chomp.downcase
+    code = code.chomp.downcase
+
     if sal == "jzw"
       if inviter = (Maintain::InviteUser).find_by_name(name)
         if inviter.code == code

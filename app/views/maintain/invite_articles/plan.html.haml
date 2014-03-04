@@ -1,5 +1,5 @@
-%script{:type => "text/javascript",
-        :src  => "#{root_url}ckeditor/ckeditor.js"}
+%p#notice= notice
+
 .tabbable.tabs-left
   %ul.nav.nav-tabs
     %li.active
@@ -7,13 +7,9 @@
     %li
       %a{ href: "#lB", data: { toggle: "tab"} } 提交改进
     %li
-      %a{ href: "#lC", data: { toggle: "tab"} } 提交缺陷
-    %li
       = link_to "退出测试", maintain_logout_path, method: :delete
   .tab-content
     .tab-pane.active#lA
       = render partial: "maintain/common/update"
     .tab-pane#lB
       = render partial: "maintain/common/req", object: @maintain_invite_article
-    .tab-pane#lC
-      = render partial: "maintain/common/bug", object: @maintain_invite_article

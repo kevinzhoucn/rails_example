@@ -1,5 +1,6 @@
 zh-CN:
   maintain_invalid_test_code: "输入代码有误, 请重新输入"
+  invite_article_created_successfully: "成功创建文章!"
 
   layouts:
     application:

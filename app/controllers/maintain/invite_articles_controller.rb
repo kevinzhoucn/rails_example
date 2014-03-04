@@ -50,7 +50,7 @@ class Maintain::InviteArticlesController < ApplicationController
 
     respond_to do |format|
       if @maintain_invite_article.save
-        format.html { redirect_to @maintain_invite_article, notice: 'Invite article was successfully created.' }
+        format.html { redirect_to maintain_plan_path, notice: t('.invite_article_created_successfully.') }
         format.json { render json: @maintain_invite_article, status: :created, location: @maintain_invite_article }
       else
         format.html { render action: "new" }
