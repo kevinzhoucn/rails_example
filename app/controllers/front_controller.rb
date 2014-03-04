@@ -6,7 +6,12 @@ class FrontController < ApplicationController
 
   def region
     @categories = Category.all
+    @segments = Segment.all
+    # if request.subdomain == "www" or request.subdomain == false
+    #   @cn = true
+    # else      
     @province = Province.find_by_abbr(request.subdomain) || not_found
+#    end
 #   @province = Province.find_by_abbr(params[:abbr])
     #@user = User.where(:name => request.subdomain).first || not_found
   end

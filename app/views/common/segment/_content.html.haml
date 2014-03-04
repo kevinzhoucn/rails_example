@@ -1,9 +1,14 @@
 - @segments.each do |seg|
-  .span6
+  .span6{style: "margin-left:5px;margin-right:5px"}
     .media.panel.panel-info
       .panel-heading= seg.name
       .media-body.panel-body
-        %ul{style: "list-style: none;margin-left: 10px"}
-          - seg.articles.each do |art|
-            %li
-              =link_to art.title, art
+        %ul{style: "list-style: none"}
+          - if @province.nil?
+            - seg.articles.each do |art|
+              %li
+                =link_to art.title, art
+          - else
+            - seg.articles.region(@province.id).each do |art|
+              %li
+                =link_to art.title, art
