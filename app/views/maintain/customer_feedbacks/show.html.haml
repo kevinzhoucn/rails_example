@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Message:
+  = @maintain_customer_feedback.message.html_safe
+
+= link_to 'Edit', edit_maintain_customer_feedback_path(@maintain_customer_feedback)
+\|
+= link_to 'Back', maintain_customer_feedbacks_path

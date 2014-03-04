@@ -1,0 +1,7 @@
+= simple_form_for(@maintain_customer_feedback) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :message, as: :text, label: false, input_html: { cols: "80", rows: "10", style: "width:auto"}
+  .controls
+    = f.button :submit, "提交", class: "btn btn-info"

@@ -1,4 +1,21 @@
 RailsExamples::Application.routes.draw do
+
+  namespace :maintain do
+    resources :customer_feedbacks
+    resources :invite_articles
+    #    resources :invite_users
+    controller :invite_articles do
+      get 'plan' => :plan
+    end
+
+    controller :invite do
+      get '/' => :index
+      get 'login' => :new
+      post 'login' => :create
+      delete 'logout' => :destory
+    end
+  end
+
   resources :articles
 
 
