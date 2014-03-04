@@ -1,0 +1,12 @@
+%h1 首页 
+%hr
+= link_to '新建类别', new_onecompany_product_category_path, class: 'btn btn-primary'
+= link_to '新建产品', new_onecompany_product_path, class: 'btn btn-info'
+%ul
+- @categories.each do |cat|
+  %li
+    = link_to cat.name, cat
+    %ul
+    - (Onecompany::Product).by_category(cat.id).each do |product|
+      %li
+        = image_tag product.avatar.url(:thumb)
