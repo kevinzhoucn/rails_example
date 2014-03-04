@@ -1,0 +1,19 @@
+%h1 Listing maintain_customer_feedbacks
+
+%table
+  %tr
+    %th Message
+    %th
+    %th
+    %th
+
+  - @maintain_customer_feedbacks.each do |maintain_customer_feedback|
+    %tr
+      %td= maintain_customer_feedback.message
+      %td= link_to 'Show', maintain_customer_feedback
+      %td= link_to 'Edit', edit_maintain_customer_feedback_path(maintain_customer_feedback)
+      %td= link_to 'Destroy', maintain_customer_feedback, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Customer feedback', new_maintain_customer_feedback_path
