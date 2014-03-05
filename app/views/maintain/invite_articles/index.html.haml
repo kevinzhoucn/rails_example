@@ -1,0 +1,23 @@
+%h1 Listing maintain_invite_articles
+
+%table
+  %tr
+    %th Title
+    %th Content
+    %th Invite user
+    %th
+    %th
+    %th
+
+  - @maintain_invite_articles.each do |maintain_invite_article|
+    %tr
+      %td= maintain_invite_article.title
+      %td= maintain_invite_article.content
+      %td= maintain_invite_article.invite_user_id
+      %td= link_to 'Show', maintain_invite_article
+      %td= link_to 'Edit', edit_maintain_invite_article_path(maintain_invite_article)
+      %td= link_to 'Destroy', maintain_invite_article, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Invite article', new_maintain_invite_article_path

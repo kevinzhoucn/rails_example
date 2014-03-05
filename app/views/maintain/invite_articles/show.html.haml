@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @maintain_invite_article.title
+%p
+  %b Content:
+  = @maintain_invite_article.content.html_safe
+%p
+  %b Invite user:
+  = @maintain_invite_article.invite_user_id
+
+= link_to 'Edit', edit_maintain_invite_article_path(@maintain_invite_article)
+\|
+= link_to 'Back', maintain_invite_articles_path

@@ -1,0 +1,25 @@
+.media.panel.panel-success
+  .panel-heading 测试计划
+  .media-body.panel-body
+    .span8
+      %p#notice.text-error= notice
+    - if @inviter_login.nil?
+      .span2
+        %button.btn.btn-success#join_test{style: "margin: 0 0 20px"} 加入测试计划
+      .span4#test_login{style: "display:none"}
+        %form.form-inline{accept: { charset: "UTF-8"}, action: "/maintain/login", method: "post"}
+          %input.input-small{type: "text", name: "sal", style: "width:40px"}
+          %span -
+          %input.input-small{type: "text", name: "name", style: "width:40px"}
+          %span -
+          %input.input-small{type: "text", name: "code", style: "width:40px"}
+          %button.btn.btn-success{type: "submit"} 登录
+    - else
+      .span2
+        = link_to '进入测试页面', maintain_plan_path, {style: "margin: 0 0 20px", class: "btn btn-success"}
+.media.panel.panel-info
+  .panel-heading 提交反馈
+  .media-body.panel-body
+    .span10
+      %p.text-info 欢迎向我们提供反馈,请留下您宝贵的意见:
+      = render partial: 'maintain/customer_feedbacks/form', object: @maintain_customer_feedback

@@ -1,0 +1,21 @@
+%h1 Listing maintain_invite_users
+
+%table
+  %tr
+    %th Name
+    %th Code
+    %th
+    %th
+    %th
+
+  - @maintain_invite_users.each do |maintain_invite_user|
+    %tr
+      %td= maintain_invite_user.name
+      %td= maintain_invite_user.code
+      %td= link_to 'Show', maintain_invite_user
+      %td= link_to 'Edit', edit_maintain_invite_user_path(maintain_invite_user)
+      %td= link_to 'Destroy', maintain_invite_user, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Invite user', new_maintain_invite_user_path

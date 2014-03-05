@@ -1,0 +1,15 @@
+%script{:type => "text/javascript",
+        :src  => "#{root_url}ckeditor/ckeditor.js"}
+        
+= simple_form_for(@maintain_invite_article) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title, label: "标题"
+    = f.input :content, as: :text, label: false
+
+  .controls
+    = f.button :submit, "发布", class: 'btn btn-primary'
+
+:javascript
+  CKEDITOR.replace('maintain_invite_article_content');    
