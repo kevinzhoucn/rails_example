@@ -1,0 +1,27 @@
+%p#notice= notice
+
+.tabbable.tabs-left
+  %ul.nav.nav-tabs
+    - product_categories.each_with_index do |cat, index|
+    - foo = 'active' if ( index == 0 )
+      %li{class: "#{foo}"}
+        %a{ href: "#A#{index}", data: { toggle: "tab"} }= cat.name
+  .tab-content
+    - product_categories.each_with_index do |cat, index|      
+    - foo = 'active' if ( index == 0 )
+      .tab-pane{ id: "A#{index}", class: "#{foo}"}
+        = render partial: "onecompany/common/item", locals: { products: (Onecompany::Product).by_category(cat.id) }
+
+/ .tabbable.tabs-left
+/   %ul.nav.nav-tabs
+/     %li.active
+/       %a{ href: "#A0", data: { toggle: "tab"} } 更新说明
+/     %li
+/       %a{ href: "#A1", data: { toggle: "tab"} } 提交改进
+/     %li 
+/       %a 退出测试
+/   .tab-content
+/     .tab-pane.active#A0
+/       = render partial: "maintain/common/update"
+/     .tab-pane#A1
+/       %h2 Test

@@ -1,0 +1,2 @@
+module Onecompany::ProductsHelper
+end

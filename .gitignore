@@ -12,6 +12,7 @@
 
 /public/assets/*.*
 /public/assets
+/public/uploadfiles
 
 # Ignore all logfiles and tempfiles.
 /log/*.log

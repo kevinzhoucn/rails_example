@@ -1,5 +1,14 @@
 RailsExamples::Application.routes.draw do
 
+  namespace :onecompany do
+    resources :products
+    resources :product_categories
+    
+    controller :front do
+      get '/' => :index
+    end
+  end
+
   namespace :maintain do
     resources :customer_feedbacks
     resources :invite_articles

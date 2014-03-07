@@ -1,0 +1,31 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      = link_to '公司网', '#', class: 'brand'
+      %ul.nav
+        %li.active
+          = link_to '首页', '#' 
+        %li
+          %a{href: '#'} 关于我们
+        %li
+          %a{href: '#'} 联系我们
+        %li.dropdown
+          %a.dropdown-toggle{href: '#', data: {toggle: 'dropdown'}} 
+            选择项目
+            %b.caret
+          %ul.dropdown-menu            
+            %li
+              = link_to '产品1' 
+            %li
+              = link_to '产品2' 
+            %li
+              = link_to '产品3' 
+            %li.divider
+            %li
+              = link_to '添加产品'
+      %ul.nav.pull-right
+        %li
+          %a{href: "#{root_url}", style: "padding-right:0px"} 登录
+        %li.divider-vertical
+        %li
+          %a{href: '#', style: "padding-left:0px"} 注册

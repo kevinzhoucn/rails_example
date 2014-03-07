@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @onecompany_product.name
+%p
+  %b Content:
+  = @onecompany_product.content
+%p
+  %b Img url:
+  = @onecompany_product.img_url
+%p
+  %b Onecompany product category:
+  = @onecompany_product.onecompany_product_category_id
+
+= link_to 'Edit', edit_onecompany_product_path(@onecompany_product)
+\|
+= link_to 'Back', onecompany_products_path
