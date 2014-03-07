@@ -37,7 +37,8 @@ gem 'simple_form'
 gem 'devise'
 gem 'will_paginate'
 gem 'bootstrap-sass'
-gem 'paperclip'
+gem 'paperclip', '~> 3.5.3'
+#gem 'paperclip', '~> 4.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

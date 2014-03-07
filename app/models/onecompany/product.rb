@@ -7,6 +7,8 @@ class Onecompany::Product < ActiveRecord::Base
   validates_presence_of :content
   validates_length_of :name, :maximum => 255
   validates_length_of :content, :maximum => 20000
+#  validates_attachment_content_type :avatar, :content_type => /\Aimage/
+#  validates_attachment_file_name :avatar, :matches => [/png\Z/, /jpe?g\Z/]
 
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, 
                     :default_url => "/images/:style/missing.png", :whiny => false,
