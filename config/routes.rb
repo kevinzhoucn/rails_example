@@ -1,5 +1,11 @@
 RailsExamples::Application.routes.draw do
 
+  namespace :world do
+    controller :front do
+      get '/' => :index
+    end
+  end
+  
   namespace :onecompany do
     resources :products
     resources :product_categories
