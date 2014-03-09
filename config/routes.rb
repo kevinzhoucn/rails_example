@@ -1,4 +1,11 @@
 RailsExamples::Application.routes.draw do
+  namespace :dpmethod do
+    controller :front do
+      get '/' => :index
+      get 'observer' => :observer
+      get 'composite' => :composite
+    end
+  end
 
   namespace :onecompany do
     resources :products
