@@ -12,8 +12,16 @@
   <div class="row">
     <div class="container-fixed-navbar" data-desc="fixed-navbar">
       <%= render :partial => 'common/theme/top_nav' %>
-    </div>    
+    </div>
+
     <div class="container" >
+      <% if notice %>
+        <p class="notice color-primary"><%= notice %></p>
+      <% end %>
+      <% if alert %>    
+        <p class="alert"><%= alert %></p>
+      <% end %>
+
       <%= yield %>
     </div>
   <!--

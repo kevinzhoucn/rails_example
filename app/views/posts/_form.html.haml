@@ -1,3 +1,6 @@
+%script{:type => "text/javascript",
+        :src  => "#{root_url}ckeditor/ckeditor.js"}
+
 = simple_form_for @post, html: {class: "form-horizontal"} do |f|
   - if @post.errors.any?
     #error_explanation
@@ -5,9 +8,14 @@
       %ul
         - @post.errors.full_messages.each do |msg|
           %li= msg
-  = f.input :title, label: "标题"
+  = f.input :title, label: "标题", required: true
   = f.association :sub_category, label: "发布版块", label_method: :name, value_method: :id, include_blank: false
+  = f.association :province, label: "发布省份", label_method: :name, value_method: :id, include_blank: false
+  = f.input :content, as: :text, label: false, rows: 20
   .from-group
     .controls
       = f.submit "保存", class: 'btn btn-info'
       = link_to '取消', sub_categories_path, class: 'btn btn-danger'
+
+:javascript
+  CKEDITOR.replace('post_content');    

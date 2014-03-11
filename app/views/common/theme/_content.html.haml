@@ -8,7 +8,10 @@
           - category.sub_categories.each do |sub_category|
             %li
               =link_to sub_category.name, sub_category
-              %span.badge.badge-info= sub_category.posts.count
+              - if province.nil?
+                %span.badge.badge-info= sub_category.posts.count
+              - else
+                %span.badge.badge-info= sub_category.posts.region(province.id).count
 
 .media.panel.panel-info
   .panel-heading 公司信息
@@ -22,7 +25,6 @@
 .media.panel.panel-warning
   .panel-heading 个人信息
   .media-body.panel-body
-    - 3.times do
-      .span4
-        - 6.times do
-          %p 个人信息发布2014-02-20
+    - Post.all.each_with_index do |post, index|
+      %div{style:"float:left;width:30%"}
+        = link_to post.title, post

@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+(Maintain::InviteUser).create(name: "zpf", code: "cny")
+(Maintain::InviteUser).create(name: "wcx", code: "jzw")
+(Maintain::InviteUser).create(name: "zgf", code: "cny")
+(Maintain::InviteUser).create(name: "bjy", code: "jzw")

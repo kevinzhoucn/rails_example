@@ -1,4 +1,6 @@
 class FrontController < ApplicationController
+  before_filter :authenticate_admin!, only: [:admin]
+  before_filter :authenticate_user!, only: [:publish]
   def index
     @categories = Category.all
     @segments = Segment.all

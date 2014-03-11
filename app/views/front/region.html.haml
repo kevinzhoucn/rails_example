@@ -1,5 +1,7 @@
 .container.theme-showcase{role: "main"}
   .row-fluid{data: {desc: "hero_unit"} }
-    = render partial: 'common/theme/hero_unit', object: @province
+    = render partial: 'common/theme/hero_unit_publish', object: @province
   .row-fluid{data: {desc: "content"} }
-    = render partial: 'common/segment/content', object: @segments, locals: { province: @province}
+    = render partial: 'common/theme/content', object: @categories, locals: { province: @province}
+  / .row-fluid{data: {desc: "content"} }
+  /   = render partial: 'common/segment/content', object: @segments, locals: { province: @province}

@@ -1,5 +1,9 @@
 RailsExamples::Application.routes.draw do
 
+  devise_for :admins, only: [:session], :path => '/admin/', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
+
+  devise_for :users
+
   namespace :onecompany do
     resources :products
     resources :product_categories
