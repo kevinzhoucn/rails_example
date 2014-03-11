@@ -1,2 +1,21 @@
 %h1 World::Front#index
 %p Find me in app/views/world/front/index.html.haml
+
+= form_tag do
+  %input{name: "range1", type: "range", min: 0, max: 100, step: 5}
+  %output{onforminput: "value=range1.value"} 50
+  
+
+= simple_form_for :test do |f|
+  %input{name: "range2", type: "range", min: 0, max: 100, step: 5}
+  %output{onforminput: "value=range1.value"} 50
+
+%ul
+  %li Test
+  %li Test2
+
+%ul
+  %li
+    Test
+    - logo = image_tag("/img/icon-clock.png")
+    = link_to logo, root_path
