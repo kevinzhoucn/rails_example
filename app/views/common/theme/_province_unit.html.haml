@@ -1,0 +1,7 @@
+.well{style: "padding: 10px"}
+  .span10
+    %p{style: "float:left"} 省份：
+    %ul{style: "list-style:none;width: 50%"}
+      - @provinces.each do |province|
+        %li{style: "float:left;margin: 0 0 0 10px"}
+          = link_to province.name, root_url(:subdomain => province.abbr), {tabindex: "-1"}

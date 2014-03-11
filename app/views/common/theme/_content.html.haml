@@ -2,7 +2,7 @@
   .panel-heading 信息分类
   .media-body.panel-body
     - @categories.each do |category|
-      .span2
+      .span3
         %h4= category.name
         %ul{style: "list-style: none;margin-left: 10px"}
           - category.sub_categories.each do |sub_category|

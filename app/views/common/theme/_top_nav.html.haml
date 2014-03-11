@@ -6,20 +6,18 @@
         %li.active
           = link_to '首页', root_url(:host => request.domain)
         %li
-          %a{href: '#'} 关于我们
-        %li
-          %a{href: '#'} 联系我们
-        %li.dropdown
-          %a.dropdown-toggle{href: '#', data: {toggle: 'dropdown'}} 
-            选择城市
-            %b.caret
-          %ul.dropdown-menu            
-            - @provinces.each do |province|
-              %li
-                = link_to province.name, root_url(:subdomain => province.abbr), {tabindex: "-1"}
-            %li.divider
-            %li
-              = link_to '添加城市', new_province_path, {tabindex: "-1"} 
+          %a 搜索
+        / %li.dropdown
+        /   %a.dropdown-toggle{href: '#', data: {toggle: 'dropdown'}} 
+        /     选择城市
+        /     %b.caret
+        /   %ul.dropdown-menu            
+        /     - @provinces.each do |province|
+        /       %li
+        /         = link_to province.name, root_url(:subdomain => province.abbr), {tabindex: "-1"}
+        /     %li.divider
+        /     %li
+        /       = link_to '添加城市', new_province_path, {tabindex: "-1"} 
       %ul.nav.pull-right
         %li
           %a{href: "#{root_url(:host => request.domain)}", style: "padding-right:0px"} 登录
