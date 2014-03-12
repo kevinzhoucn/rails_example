@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
   belongs_to :province
   belongs_to :user
 
+  default_scope order: "created_at DESC"
   scope :region, lambda { |id| where( province_id: id) }
 
   # def Post.auth(sal, name, code)

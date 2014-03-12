@@ -26,5 +26,6 @@
   .panel-heading 个人信息
   .media-body.panel-body
     - Post.all.each_with_index do |post, index|
-      %div{style:"float:left;width:30%"}
+      %div{style:"float:left;width:40%;margin-right:40px"}
         = link_to post.title, post
+        %span{style: "float:right"}= post.created_at.strftime('%Y-%m-%d %H:%M').to_s

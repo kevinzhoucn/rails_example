@@ -7,6 +7,9 @@
           = link_to '首页', root_url(:host => request.domain)
         %li
           %a 搜索
+          / = simple_form_for :search, html: {class: "form-inline"} do |f|
+          /   = f.input :query, class: "input-medium search-query", label: false, input_html: {style: "display:inline-block;margin_bottom:0;vertical-align:middle"}
+          /   = f.submit "搜索", class: "btn"
         / %li.dropdown
         /   %a.dropdown-toggle{href: '#', data: {toggle: 'dropdown'}} 
         /     选择城市

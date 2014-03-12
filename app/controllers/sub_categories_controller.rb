@@ -15,7 +15,9 @@ class SubCategoriesController < ApplicationController
   def show
     @sub_category = SubCategory.find(params[:id])
     @posts = @sub_category.posts
-    @province = Province.find_by_abbr(request.subdomain) || not_found
+    if not request.subdomain.nil?
+      @province = Province.find_by_abbr(request.subdomain)
+    end
 
     respond_to do |format|
       format.html # show.html.erb
