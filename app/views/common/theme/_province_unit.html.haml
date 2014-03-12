@@ -6,4 +6,5 @@
         = link_to '全国', root_url(:subdomain => "www"), {tabindex: "-1"}
       - @provinces.each do |province|
         %li{style: "float:left;margin: 0 0 0 10px"}
-          = link_to province.name, root_url(:subdomain => province.abbr), {tabindex: "-1"}
+          = link_to province.name, "/#{province.abbr}", {tabindex: "-1"}
+          / = link_to province.name, root_url(:subdomain => province.abbr), {tabindex: "-1"}
