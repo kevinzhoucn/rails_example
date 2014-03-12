@@ -21,6 +21,6 @@ class Maintain::InviteController < ApplicationController
 
   def destory
     session[:invite_user_id] = nil
-    redirect_to root_url, :notice => "Logged out"
+    redirect_to root_url, :notice => t(".tester_logged_out")
   end  
 end

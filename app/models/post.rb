@@ -8,6 +8,14 @@ class Post < ActiveRecord::Base
   default_scope order: "created_at DESC"
   scope :region, lambda { |id| where( province_id: id) }
 
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
+
   # def Post.auth(sal, name, code)
   #   if sal == "jzw"
   #     if user = Maintain::InviteUser.find_by_name(name)
