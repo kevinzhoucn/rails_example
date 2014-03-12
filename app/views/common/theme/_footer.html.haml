@@ -4,11 +4,11 @@
   .maintain.row
     %ul
       %li
+        = link_to "网站管理", front_admin_path
+        |
         - if current_admin
           = link_to "退出管理", destroy_admin_session_path, { method: :delete}
-        - else
-          = link_to "网站管理", front_admin_path
-        |
+          |
         = link_to "意见反馈", maintain_path
   .address.row
     %ul
