@@ -2,13 +2,16 @@
   .panel-heading 信息分类
   .media-body.panel-body
     - @categories.each do |category|
-      .span2
+      .span3
         %h4= category.name
         %ul{style: "list-style: none;margin-left: 10px"}
           - category.sub_categories.each do |sub_category|
             %li
               =link_to sub_category.name, sub_category
-              %span.badge.badge-info= sub_category.posts.count
+              - if province.nil?
+                %span.badge.badge-info= sub_category.posts.count
+              - else
+                %span.badge.badge-info= sub_category.posts.region(province.id).count
 
 .media.panel.panel-info
   .panel-heading 公司信息
@@ -22,7 +25,7 @@
 .media.panel.panel-warning
   .panel-heading 个人信息
   .media-body.panel-body
-    - 3.times do
-      .span4
-        - 6.times do
-          %p 个人信息发布2014-02-20
+    - Post.all.each_with_index do |post, index|
+      %div{style:"float:left;width:40%;margin-right:40px"}
+        = link_to post.title, post
+        %span{style: "float:right"}= post.created_at.strftime('%Y-%m-%d %H:%M').to_s
