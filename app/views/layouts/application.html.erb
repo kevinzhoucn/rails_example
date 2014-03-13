@@ -16,10 +16,10 @@
 
     <div class="container" >
       <% if notice %>
-        <p class="notice color-primary"><%= notice %></p>
+        <p class="notice color-primary"><%#= notice %></p>
       <% end %>
       <% if alert %>    
-        <p class="alert"><%= alert %></p>
+        <p class="alert"><%#= alert %></p>
       <% end %>
 
       <%= yield %>
