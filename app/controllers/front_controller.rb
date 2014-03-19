@@ -21,7 +21,24 @@ class FrontController < ApplicationController
   end
 
   def sort
-    params[:sort]
+    sort_str = params[:sort]
+    if not sort_str.nil?
+      sort_str =~ %r{jzc(\d+)s(\d+)p(\d+)}
+      @sort_str_ret = [$1, $2, $3]
+
+      if $1 != '0'
+        @category = Category.find($1)       
+
+        if $2 != '0'
+          @sub_category = @category.sub_categories.find($2)
+        else
+          @sub_categories = @category.sub_categories
+        end
+
+      else
+        @categories = Category.all
+      end
+    end
   end
 
   def publish

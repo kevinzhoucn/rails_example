@@ -1,1 +1,11 @@
 %h2 Hello world
+%p= @sort_str_ret
+
+- if not @categories.nil?
+  %ul
+    - @categories.each do |cat|
+      %li= cat.name
+
+- if not @category.nil?
+  %ul
+    %li= @category.name
