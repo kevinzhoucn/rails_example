@@ -20,6 +20,10 @@ class FrontController < ApplicationController
     #@user = User.where(:name => request.subdomain).first || not_found
   end
 
+  def sort
+    params[:sort]
+  end
+
   def publish
     @categories = Category.all
   end

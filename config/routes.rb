@@ -31,12 +31,9 @@ RailsExamples::Application.routes.draw do
 
   resources :articles
 
-
   resources :segments
 
-
   resources :provinces
-
 
   resources :posts
   resources :sub_categories
@@ -48,6 +45,7 @@ RailsExamples::Application.routes.draw do
   get "front/region"
 
   match '/:abbr' => 'front#region', :constraints => { :abbr => /[a-z]{2,5}/ }, :via => :get
+  match '/:sort/res.html' => 'front#sort', :constraints => { :sort => /jzc\d{1,2}s\d{1,2}p\d{1,2}/ }, :via => :get  # jzc0s2p1
 
   constraints(Subdomain) do
     match '/' => 'front#region'
