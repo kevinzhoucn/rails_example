@@ -4,8 +4,17 @@
 - if not @categories.nil?
   %ul
     - @categories.each do |cat|
-      %li= cat.name
+      %li
+        = cat.get_posts
 
 - if not @category.nil?
   %ul
     %li= @category.name
+    %li
+      = @category.get_posts
+
+- if not @sub_category.nil?
+  %ul
+    - @sub_category.posts.each do |art|
+      %li
+        = art.title
