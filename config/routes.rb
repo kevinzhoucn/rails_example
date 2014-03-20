@@ -1,5 +1,4 @@
 RailsExamples::Application.routes.draw do
-
   devise_for :admins, only: [:session], :path => '/admin/', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
 
   devise_for :users
@@ -29,7 +28,7 @@ RailsExamples::Application.routes.draw do
     end
   end
 
-  scope (':abbr'), :constraints => { :abbr => /[a-z]{2,5}/ } do
+  scope (':abbr'), :constraints => { :abbr => /[a-z]{2,3}/ } do
     controller :front do
       get '/' => :region
       get '/res.html' => :region

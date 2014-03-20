@@ -22,6 +22,11 @@ class FrontController < ApplicationController
 
   def sort
     sort_str = params[:sort]
+
+    if not params[:abbr].nil?
+      @province = Province.find_by_abbr(params[:abbr])
+    end
+    
     if not sort_str.nil?
       sort_str =~ %r{jzc(\d+)s(\d+)p(\d+)}
       @sort_str_ret = [$1, $2, $3]

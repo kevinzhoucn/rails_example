@@ -4,15 +4,19 @@
     - @categories.each do |category|
       .span3
         %h4
-          =link_to category.name
+          - if not province.nil?
+            - cat_path = "/#{province.abbr}/jzc#{category.id}s0p0.html"
+          - else
+            - cat_path = "/jzc#{category.id}s0p0.html"
+          =link_to category.name, cat_path, { style: "color: black" }
         %ul{style: "list-style: none;margin-left: 10px"}
           - category.sub_categories.each do |sub_category|
             - if not province.nil?
-              - cat_path = "/#{province.abbr}/jzc#{category.id}s#{sub_category.id}p0.html"
+              - sub_cat_path = "/#{province.abbr}/jzc#{category.id}s#{sub_category.id}p0.html"
             - else
-              - cat_path = "/jzc#{category.id}s#{sub_category.id}p0.html"
+              - sub_cat_path = "/jzc#{category.id}s#{sub_category.id}p0.html"
             %li
-              =link_to sub_category.name, cat_path
+              =link_to sub_category.name, sub_cat_path
               - if province.nil?
                 %span.badge.badge-info= sub_category.posts.count
               - else

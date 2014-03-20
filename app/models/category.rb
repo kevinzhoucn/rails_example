@@ -6,8 +6,11 @@ class Category < ActiveRecord::Base
   def get_posts
     posts = []
     sub_categories.each do |sub_category|
-      posts << sub_category.posts.select("id, title, created_at")
+      sub_category.posts.select("id, title, created_at").each do |post|
+        posts << post
+      end
     end
-    posts.sort_by {|x, y| x.created_at <=> y.created_at}
+    posts.sort! {|x, y| y.created_at <=> x.created_at}
+#    posts = posts.sort_by {|x, y| x.created_at <=> y.created_at}
   end
 end
