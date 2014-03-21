@@ -30,6 +30,13 @@ group :assets do
   # gem 'twitter-bootstrap-rails'
 end
 
+group :test do
+  gem 'cucumber-rails'
+  gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'factory_girl'
+end
+
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'haml-rails'
