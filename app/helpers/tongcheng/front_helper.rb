@@ -1,0 +1,2 @@
+module Tongcheng::FrontHelper
+end

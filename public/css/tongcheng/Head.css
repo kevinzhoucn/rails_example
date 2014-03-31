@@ -1,0 +1,788 @@
+﻿/*论坛首页*/
+
+
+.forumstatus {
+    float: right;
+    text-align: right;
+    color: #666;
+    white-space: nowrap;
+    background: url(/images/icon/tzs.png) no-repeat left center;
+    padding-left: 20px;
+}
+
+    .forumstatus em {
+        font-style: normal;
+        font-weight: bold;
+        color: #f60;
+    }
+
+    .forumstatus a:link, .forumstatus a:visited {
+        color: #f60;
+    }
+
+.crumbnav {
+    float: left;
+}
+
+    .crumbnav .crumbnav-label {
+        float: left;
+        display: block;
+        width: 16px;
+        height: 16px;
+        margin: 2px 5px 0 0;
+        overflow: hidden;
+        background: url(/images/Background/crumbnav_icon.png) no-repeat;
+    }
+
+.subnav {
+    /*background: url(/images/panel_bg.png) no-repeat 100% -100px;*/
+}
+
+.subnav-inner {
+    margin: 0;
+    padding: 10px 0 5px;
+    background: #fff;
+    border-top: 1px solid #ccdded;
+}
+
+.stats-publish {
+    color: #369;
+}
+
+.stats-comment {
+    color: #999;
+}
+
+.clearfix:after, .hot-s-word {
+    clear: both;
+}
+
+.clearfix:after, .del-ico, .edit-ico {
+    display: block;
+}
+
+.clearfix:after {
+    content: "\0020";
+    height: 0;
+    visibility: hidden;
+}
+
+
+.tit {
+    background: url(/images/Background/btt.png) repeat-x left top;
+    line-height: 34px;
+    height: 34px;
+    text-indent: 30px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.lst {
+    padding: 5px;
+    line-height: 22px;
+}
+
+    .lst a {
+        color: #333333;
+    }
+
+.hot {
+    padding-top: 4px;
+    _padding-top: 7px;
+    border-right: 1px #ddd solid;
+    background: url(/images/Background/sortnum.png) no-repeat 7px 8px;
+    text-indent: 20px;
+}
+
+    .hot .links {
+        color: #990000;
+        padding-right: 4px;
+    }
+
+    .hot a {
+        color: #000;
+    }
+
+
+    .hot li {
+        width: 96%;
+        height: 23px;
+        line-height: 23px;
+        _height: 21px;
+        _line-height: 21px;
+        font-size: 12px;
+        overflow: hidden;
+        white-space: nowrap;
+        padding-left: 6px;
+    }
+
+    .hot em {
+        font-style: normal;
+    }
+
+        .hot em a {
+            color: #999;
+        }
+
+
+.forumthumbs .panel-body ul {
+    width: 100%;
+    margin-top: -3px;
+}
+
+    .forumthumbs .panel-body ul li {
+        padding: 10px 0;
+        color: #999999;
+        border-top: 1px dashed #c8c8c8;
+        float: left;
+        width: 326px;
+    }
+
+.forumunit {
+    padding-left: 65px;
+}
+
+    .forumunit .title {
+        float: right;
+        width: 100%;
+        margin-bottom: 3px;
+    }
+
+        .forumunit .title a {
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+            .forumunit .title a:link, .forumunit .title a:visited {
+                color: #2047ec;
+            }
+
+        .forumunit .title .status {
+            color: #999;
+        }
+
+            .forumunit .title .status em {
+                font-style: normal;
+                color: #f60;
+            }
+
+    .forumunit .mini-title {
+        float: right;
+        width: 100%;
+        margin-bottom: 3px;
+    }
+
+        .forumunit .mini-title a {
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+            .forumunit .mini-title a:link, .forumunit .mini-title a:visited {
+                color: #555;
+            }
+
+        .forumunit .mini-title .status {
+            color: #999;
+        }
+
+            .forumunit .mini-title .status em {
+                font-style: normal;
+                color: #f60;
+            }
+
+    .forumunit .image {
+        float: left;
+        display: inline;
+        width: 48px;
+        height: 48px;
+        margin: 15px 0 0 -60px;
+        text-align: center;
+    }
+
+        .forumunit .image a {
+            position: relative;
+            display: inline-block;
+        }
+
+            .forumunit .image a img {
+                display: block;
+            }
+
+    .forumunit .intro {
+        width: 350px !important;
+        line-height: 20px;
+    }
+
+    .forumunit dd {
+        color: #999;
+        margin-bottom: 3px;
+    }
+
+.lastpost-title a:link, .lastpost-title a:visited {
+    color: #555;
+}
+
+
+.panel {
+    margin-bottom: 7px;
+    border: 1px #cecece solid;
+}
+
+    .panel .panel-body {
+        overflow: hidden;
+        padding: 0 10px;
+        background: #fff;
+    }
+
+        .panel .panel-body table {
+            width: 100%;
+        }
+
+        .panel .panel-body .forum-info {
+            width: 60%;
+        }
+
+        .panel .panel-body .forumunit {
+            width: 50%;
+        }
+
+    .panel:after, .panel-head:after, .panel-body:after {
+        content: ".";
+        display: block;
+        clear: both;
+        height: 0;
+        font: 0/0 sans-serif;
+        visibility: hidden;
+    }
+
+.panel-title {
+}
+
+.panel .panel-head {
+    background: url(/images/Background/titlebg.png) repeat-x;
+    line-height: 31px;
+    padding-left: 20px;
+    border-bottom: 1px #cecece solid;
+}
+
+    .panel .panel-head h3 {
+        font-size: 14px;
+        font-family: "微软雅黑";
+    }
+
+.links-text {
+    clear: both;
+    line-height: 1.8;
+    padding: 6px;
+}
+
+    .links-text a {
+        margin-right: .8em;
+        white-space: nowrap;
+    }
+
+
+
+/*列表页*/
+.cl {
+    zoom: 1;
+}
+
+    .cl:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+.bn {
+    margin-bottom: 10px;
+}
+
+.bm {
+    margin-bottom: 10px;
+    background: #FFF;
+    border: 1px #cdcdcd solid;
+}
+
+.bmw {
+    border: 1px solid #CDCDCD;
+}
+
+#pgt .pg, #pgt .pgb {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.y {
+    float: right;
+}
+
+
+.pg {
+    float: right;
+    line-height: 26px;
+}
+
+    .pg a.prev {
+        background-image: url(/images/Icon/arw_l.gif);
+        background-position: 50% 50%;
+    }
+
+    .pg a:hover, .pgb a:hover {
+        border-color: #0055CC;
+        text-decoration: none;
+        color: #0055CC;
+    }
+
+    .pg a {
+        float: left;
+        display: inline;
+        margin-left: 4px;
+        padding: 0 8px;
+        height: 26px;
+        border: 1px solid;
+        border-color: #cdcdcd;
+        background-color: #FFF;
+        background-repeat: no-repeat;
+        color: #333;
+        overflow: hidden;
+        text-decoration: none;
+    }
+
+    .pg strong {
+        float: left;
+        display: inline;
+        margin-left: 4px;
+        padding: 0 8px;
+        height: 26px;
+        border: 1px solid;
+        border-color: #cdcdcd;
+        background-color: #FFF;
+        background-repeat: no-repeat;
+        color: #333;
+        overflow: hidden;
+        text-decoration: none;
+        background-color: #0055CC;
+        color: #fff;
+        border: 1px solid #0055CC;
+    }
+
+    .pg a.nxt {
+        padding-right: 25px;
+        background-image: url(/images/Icon/arw007_r.gif);
+        background-position: 90% 50%;
+    }
+
+.pgb {
+    line-height: 26px;
+}
+
+    .pgb a {
+        padding: 0 10px;
+        /*padding: 0 8px;*/
+        padding-left: 25px;
+        margin-left: 4px;
+        float: left;
+        display: inline;
+        height: 26px;
+        border: 1px solid;
+        border-color: #cdcdcd;
+        color: #333;
+        overflow: hidden;
+        text-decoration: none;
+        background-color: #FFF;
+        background-repeat: no-repeat;
+        background-image: url(/images/Icon/arw007_l.gif);
+        background-position: 10px 50%;
+    }
+
+
+.tl .th {
+    margin-top: 1px;
+    padding: 0 10px;
+    border-bottom: 1px solid #CDCDCD;
+    background: #F2F2F2;
+}
+
+    .tl .th table {
+        border: none;
+    }
+
+    .tl .th td, .tl .th th {
+        height: 20px;
+        border: none;
+        vertical-align: baseline;
+    }
+
+.tl .by {
+    width: 105px;
+    line-height: 14px;
+    color: #0066FF;
+}
+
+    .tl .by cite span, .tl .by cite a {
+        color: #333333;
+    }
+
+.tl .num {
+    width: 60px;
+    line-height: 14px;
+}
+
+    .tl .num em {
+        display: block;
+        font-style: normal;
+    }
+
+.tl .icn {
+    padding-left: 5px;
+    width: 25px;
+    text-align: left;
+}
+
+
+.tl table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+}
+
+.tl th {
+    padding: 5px 0;
+    border-bottom: 1px dotted #C2D5E3;
+    padding-right: 1.5em;
+    zoom: 1;
+    text-align: left;
+    font-weight: normal;
+}
+
+    .tl th a:visited {
+        color: #555;
+    }
+
+.tl td {
+    padding: 5px 0;
+    border-bottom: 1px dotted #C2D5E3;
+}
+
+
+    .tl td em {
+        color: #999;
+        font-size: 11px;
+        font-family: Arial,PMingliu,sans-serif;
+        -webkit-text-size-adjust: none;
+        font-style: normal;
+    }
+
+        .tl td em a {
+            color: #999;
+        }
+
+.tl cite {
+    display: block;
+    font-style: normal;
+}
+
+
+
+
+
+.xi1, .onerror {
+    color: #F26C4F;
+    font-weight: 800;
+}
+
+
+.paiming{ position:relative; float:left; width:170px; margin-top:4px;}
+.paiming .an{padding:2px 4px; background:#fd8000;}
+.paiming .an a{ color:#FFFFFF}
+.paiming .plane{ position:absolute; top:18px; left:0px; border:2px #fd8000 solid; background:#fff9f2; width:175px; padding:5px; z-index:999}
+.paiming .plane li{ line-height:25px; border-bottom:1px #ddd dashed; height:24px}
+.paiming .plane li span{ color:#0055CC; padding-left:15px}
+
+
+/*发布页面*/
+#content #bd {
+    zoom: 1;
+}
+
+#bd {
+    margin: 0;
+    background: #F2F2F2;
+    padding: 10px;
+}
+
+    #bd .main {
+        padding: 1px;
+        border: 1px solid #D9D9D9;
+        background: #fff;
+    }
+
+        #bd .main .title {
+            height: 40px;
+        }
+
+            #bd .main .title h3 {
+                display: inline;
+                float: left;
+                margin-top: 10px;
+                margin-left: 10px;
+            }
+
+        #bd .main .post {
+            margin: 0 10px 10px 10px;
+            padding: 15px;
+            padding-top: 0;
+            padding-bottom: 30px;
+            border-bottom: 0 solid #ccc;
+        }
+
+            #bd .main .post td {
+                font-size: 14px;
+                font-family: "微软雅黑";
+                padding-top: 28px;
+                padding-left: 20px;
+            }
+
+            #bd .main .post th {
+                vertical-align: top;
+                padding-top: 30px;
+            }
+
+input.text-long {
+    width: 400px;
+    /*background: #FFF url(http://a.tbcdn.cn/app/matrix/img/group_input_bg.png) no-repeat scroll left top;*/
+    border: 1px solid #999;
+    font-size: 1em;
+    line-height: 18px;
+    padding: 2px;
+    color: #000;
+}
+
+
+
+
+
+.pn {
+    cursor: pointer;
+    vertical-align: middle;
+    overflow: hidden;
+    margin-right: 3px;
+    padding: 0;
+    height: 23px;
+    border: 1px solid #999;
+    background: #E5E5E5 url(/images/Brackground/pn.png) repeat-x 0 0;
+    cursor: pointer;
+    -moz-box-shadow: 0 1px 0 #E5E5E5;
+    -webkit-box-shadow: 0 1px 0 #E5E5E5;
+    box-shadow: 0 1px 0 #E5E5E5;
+}
+
+    .pn em, .pn strong {
+        font-weight: 700;
+    }
+
+    .pn em, .pn span, .pn strong {
+        padding: 0 10px;
+        line-height: 21px;
+    }
+
+.pnc, a.pnc {
+    border-color: #235994;
+    background-color: #0055CC;
+    background-position: 0 -48px;
+    color: #FFF !important;
+}
+
+#f_pst td {
+    font-size: 14px;
+    font-family: "微软雅黑";
+}
+
+/*帖子详情页*/
+.pl table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.ad .pls {
+    background: #E5EDF2;
+    padding: 0;
+    height: 4px;
+}
+
+.ad .plc {
+    background: #E5EDF2;
+    padding: 0;
+    overflow: hidden;
+}
+
+.pls {
+    vertical-align: top;
+    overflow: hidden;
+    width: 170px;
+    background: #f4fbff;
+    overflow: hidden;
+    border-right: 1px solid #C2D5E3;
+}
+
+    .pls dt {
+        margin-right: 3px;
+        width: 55px;
+        float: left;
+        overflow: hidden;
+        height: 1.6em;
+        line-height: 1.6em;
+    }
+
+    .pls dd {
+        width: 80px;
+        float: left;
+        overflow: hidden;
+        height: 1.6em;
+        line-height: 1.6em;
+    }
+
+    .pls .avatar {
+        margin: 10px 15px;
+    }
+
+        .pls .avatar img {
+            padding: 5px 5px 8px;
+            background: #FFF url(../images/midavt_shadow.gif) 0 100% repeat-x;
+            width: 120px;
+            height: 140px;
+            height: 110px;
+        }
+
+    .pls p, .pls .pil, .pls .o {
+        margin: 5px 10px 5px 20px;
+    }
+
+        .pls p em, .pls dt em {
+            color: #F26C4F;
+        }
+
+.authicn {
+    cursor: pointer;
+}
+
+.plc {
+    padding: 6px 20px;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+
+.plm {
+    vertical-align: bottom !important;
+}
+
+.pct {
+    padding-bottom: 1em;
+}
+
+.pcb {
+    margin-right: 0;
+}
+
+.po p a, .po p label {
+    margin-right: 6px;
+}
+
+.pob em {
+    float: left;
+}
+
+    .pob em a {
+        padding: 5px 10px 5px 25px;
+    }
+
+.fastre {
+    background: url(/images/Icon/fastreply.gif) no-repeat 4px 50%;
+}
+
+.pi {
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding: 10px 0;
+    height: 16px;
+    border-bottom: 1px dashed #CDCDCD;
+}
+
+    .pi strong a {
+        float: right;
+        margin-top: -6px;
+        padding: 4px 6px;
+        border: 1px solid #FFF;
+        font-weight: 400;
+    }
+
+.xg1, .xg1 a {
+    color: #999 !important;
+}
+
+.hm {
+    text-align: center;
+    padding-top: 6px;
+}
+
+
+.xi1, .onerror {
+    color: #F26C4F;
+    font-weight: 800;
+}
+
+.pipe {
+    margin: 0px 4px;
+}
+
+.po {
+    border-top: 1px dashed #CDCDCD;
+}
+
+.ts {
+    font-family: "黑体";
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.t_f, .t_f td {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.imgvc {
+    position: relative;
+    float: left;
+    display: block;
+    margin: 10px;
+    width: 150px;
+    background: url(/images/Background/default.jpg);
+    height: 100px;
+    overflow: hidden;
+}
+
+    .imgvc .name {
+        text-align: center;
+    }
+
+    .imgvc img, .imgvc .name {
+        width: 150px;
+        height: 110px;
+        border: 1px #ddd solid;
+    }
+
+        .imgvc .name span {
+            font-size: 20px;
+            display: inline-block;
+            padding-top: 15px;
+            line-height: 43px;
+            font-family: "微软雅黑";
+            color: #1569a9;
+            font-weight: normal;
+        }
+        

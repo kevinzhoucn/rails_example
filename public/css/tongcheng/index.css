@@ -1,0 +1,129 @@
+/* CSS Document */
+body,dl,ol,ul,li,dt,dd,p,h2,h3{margin:0;padding:0;list-style:none}
+body{font-family:Arial,"宋体";font-size:12px; padding:0px; margin:0px; color:#333333}
+a{color:#0055CC;text-decoration:none;cursor:pointer;}
+a:hover{color:#FF0508;text-decoration:underline;}
+.clear{clear:both;font-size:0;height:0;overflow:hidden}
+.hc{display:none}
+.sc{display:block} 
+img{ border:none;} 
+.fr{ float:right;}
+.morelink,#footer{width:998px;margin:0 auto;clear:both;padding:0px;overflow:hidden;}
+.morelink{border:1px solid #e5e5e5;}
+.ad{ margin-bottom:5px}
+.ad img{ border:0px}
+.vip span{ color:#ff0000; font-size:12px}
+
+a.link_red{color:#ff0508;}
+.lan { text-align:right; float:right; display:block; }
+.lan a { color:#0055CC;display: inline;}
+.ss a {text-decoration: none;}
+a.ss:link,a.ss:visited {color:#FFF;}
+a.ss:hover {color: #0CF;display: inline;}
+a.red:link,a.red:visited {color:#ff0000;}
+a.red:hover {color:#0055CC; text-decoration:underline}
+
+/* morelink  */
+.morelinkinside{padding:10px;border-top:solid 1px #e1e1e1;background:#F5F8FF;overflow:hidden;left:16px}
+.morelinkinside a{ color:#585858; margin-right:5px;white-space: nowrap;}
+.morelinkinside strong{float:left; margin-right:5px; *margin-top:2px}
+.morelinkinside li{float:left; margin-right:10px; list-style-type:none}
+
+
+/* 专业分类 css*/
+.c_b{width:180px;padding:0px 10px 5px 9px;float:left;line-height:220%;color:#999;overflow:hidden;font-size:12px;margin-right: 0px;}
+.c_b a{ font-size:14px; margin-left:5px;}
+.c_b h2{ background:#F5F8FF; font-size:14px; padding:0px; margin:10px 0px; color:#000000}
+.c_b h2 a:hover{ color:#0055CC; text-decoration:underline}
+.c_b h2 a:active,.c_b h2 a:link,.c_b h2 a:visited{ color:#000000}
+.c_b h2 a.red{color:#FF0508; font-size:12px; font-weight:100}
+.cb_ul a{ font-size:14px; }
+.cb td a{font-size:14px}
+/* 城市 css*/
+.dq_r{  padding:7px 0px 0 8px;padding:7px 0 5px 8px; float:left; background:#FFF; border-bottom:1px solid #E5E5E5;}
+.dq_r.kk{ width:90px;padding:8px 8px 0 ; border:none;border-top:#dcdcdc solid 1px;  height:56px;  }
+.dq_r ul{ float:left; background:#fff}
+.dq_r.kk ul.bbkd{ width:98px;float:left; }
+.dq_r ul.jk1{ width:23px; margin-right:10px;_margin-right:1px}
+.dq_r ul li{ width:auto;float:left; text-align:left;}
+.dq_r ul li.dq_k{ width:788px;}
+.dq_r ul li a{ padding:0 9px;  float:left; line-height:23px; background:url(/img/tongcheng/city_icon.gif) -45px -1px no-repeat;  margin-bottom:5px; margin-left:5px; text-align:center; color:#666 }
+.dq_r ul li a.zx{ width:23px; cursor:default; float:left; height:47px;background:url(/img/tongcheng/city_icon.gif) -1px -1px no-repeat; color:#fff; line-height:23px; padding:0; text-align:center; font-size:14px; font-weight:bold;}
+.dq_r ul li a:hover.zx,.dq_r ul li a:hover.zx1{background:url(/img/tongcheng/city_icon.gif) -1px -1px no-repeat;color:#ff0}
+.dq_r ul li a:hover{ background:url(/img/tongcheng/city_icon.gif) -98px -1px no-repeat; text-decoration:none; color:#fff}
+.dq_r ul li a.hover a{ color:#000; font-weight:bold;background:url(/img/tongcheng/city_icon.gif) -98px -1px no-repeat;}
+.dq_r ul li a.hover a:hover{ color:#000; text-decoration:none;}
+
+.dq_r ul.jk1 li a.ss{ background:none}
+.dq_r .out{height:54px;float:left;width:166px; overflow:hidden;line-height:25px}
+.dq_r .out span{ color:#990000; font-weight:bold}
+.dq_r .out a{ color:#000}
+
+
+.dq_r ul li a.current {
+    background: url(/img/tongcheng/city_icon.gif) -98px -1px no-repeat;
+    text-decoration: none;
+    color: #fff;
+}
+/* 广告 css*/
+.gg_190x60{ margin:4px auto}
+.gg_190x60 a{ display:inline-block; width:195px; height:60px; overflow:hidden; text-align:center}
+.gg_190x60 img{ width:190px; height:60px;}
+
+
+/* 信息 css*/
+
+.morelink h3{background:#F5F8FF; font-size:14px; margin-bottom:4px; height:30px; line-height:30px; text-indent:15px;float:left; width:100%}
+.morelink h3 a{color:#000000}
+.morelink .cb_ul{width:990px;padding:2px 0px 4px 0px; margin-bottom:8px;float:block; line-height:200%; color:#999; overflow:hidden; background:#fff; height:100%; clear:both}
+.morelink .cb_ul li{float:left; width:300px; padding:0 5px 0 18px; *padding:0 4px 0 14px; height:27px;_height:24px}
+.morelink .cb_ul a{ font-size:14px;}
+.morelink .vip li { line-height:20px; height:20px}
+.morelink .vip li a{ font-size:12px}
+
+.cb_ul1{width:990px;padding:2px 0px 0px 0px; margin-bottom:4px; height:108px; float:left; line-height:180%; color:#999; overflow:hidden;}
+.cb_ul1 li{float:left; width:150px; padding:0 4px 0 8px; *padding:0 4px 0 8px;}
+.cb_ul1 a{ font-size:12px;}
+
+/*顶 荐 按钮*/
+
+.topIco{display: inline-block;height: 15px;width: 15px;white-space: nowrap;background:url(../images/top.gif) repeat scroll transparent;cursor:pointer; margin-left:4px; margin-right:4px}
+.topA{display: inline-block;}
+.jian2{display: inline-block;height: 15px;width: 15px;white-space: nowrap;background:url(../images/jian2.jpg) repeat scroll transparent;cursor:pointer;margin-left:4px; margin-right:4px}
+.jian3{display: inline-block;height: 15px;width: 15px;white-space: nowrap;background:url(../images/jian3.jpg) repeat scroll transparent;cursor:pointer;margin-left:4px; margin-right:4px}
+
+/*底部推荐企业*/
+.user{ float:left; width:331px; display:inline;overflow:hidden;}
+.user h2{background:#F5F8FF; font-size:14px;height:30px; line-height:30px; text-indent:15px; width:100%; clear:both}
+.user h2 a{ color:#000000}
+.user ul{line-height:21px; padding:5px}
+.user li{padding-left:8px; white-space:nowrap;}
+.user span{color:#999;}
+.user .hover{background-color:#eee;}
+.user .l{float:left;}
+.user .r{font-weight:normal;font-size:12px;float:right;}
+
+
+/*主页CSS*/
+.here {position: relative;}
+
+        li.here a:visited, li.here a {line-height: 31px;}
+
+        .here-radius, .hot-ico, .new-ico {position: absolute;}
+
+        .here-radius {background: #427ee6;top: 0;border-left: 1px solid #c4d3ed;border-right: 1px solid #c4d3ed;left: 0;width: 96px;}
+
+        .here-radius, .f-bor-shadow {height: 1px;}
+        .here-radius, .col-big, .f-bor-shadow, .t-con, .t-eara {overflow: hidden;}
+
+        li.here a:visited, li.here a {color: #fff;}
+
+        .morelink h3 a {color: #0055CC;}
+
+        .user h2 a {color: #0055CC;}
+        
+        .morelinkinside a {white-space: nowrap;}
+
+
+
+

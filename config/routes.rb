@@ -4,6 +4,12 @@ RailsExamples::Application.routes.draw do
 
   devise_for :users
 
+  namespace :tongcheng do
+    controller :front do
+      get '/' => :index
+    end
+  end
+
   namespace :onecompany do
     resources :products
     resources :product_categories
@@ -30,14 +36,8 @@ RailsExamples::Application.routes.draw do
   end
 
   resources :articles
-
-
   resources :segments
-
-
   resources :provinces
-
-
   resources :posts
   resources :sub_categories
   resources :categories
