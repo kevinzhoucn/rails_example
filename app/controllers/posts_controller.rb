@@ -2,13 +2,14 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.search(params[:search])
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
     end
   end
+
 
   # GET /posts/1
   # GET /posts/1.json
@@ -46,10 +47,12 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(params[:post])
+    @post.user_id = current_user.id unless current_user
+    @post.province_id = @province.id unless @province.nil?
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to @post, notice: t('.post_successfully_created') }
         format.json { render json: @post, status: :created, location: @post }
       else
         format.html { render action: "new" }
@@ -65,7 +68,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to @post, notice: t('.post_successfully_updated') }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

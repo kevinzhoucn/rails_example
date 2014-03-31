@@ -1,4 +1,4 @@
-.hero-unit{style: "margin-top: 20px;padding-top:20px;padding-bottom:20px"}
+.hero-unit{style: "margin-top: 20px;padding-top:20px;padding-bottom:20px;margin-bottom:10px"}
   %h1
   %p{style: "font-size:110%" } 
     建筑同城网
@@ -9,3 +9,6 @@
   %p
     =link_to '发布文章 »', new_article_path, class: 'btn btn-primary btn-small'
     =link_to '创建栏目 »', new_segment_path, class: 'btn btn-success btn-small'
+
+.row-fluid{data: {desc: "province_unit"}}
+  = render partial: 'common/theme/province_unit', object: @provinces

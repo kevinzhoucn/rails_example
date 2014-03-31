@@ -1,0 +1,58 @@
+/ %h2 Hello world
+/ %p= @sort_str_ret
+
+/ - if not @categories.nil?
+/   %ul
+/     - @categories.each do |cat|
+/       %li
+/         = cat.get_posts
+
+/ - if not @category.nil?
+/   %ul
+/     %li= @category.name
+/     %li
+/       = @category.get_posts
+
+/ - if not @sub_category.nil?
+/   %ul
+/     - if @province.nil?
+/       - @sub_category.posts.each do |art|
+/         %li
+/           = art.title
+/     - else
+/       - @sub_category.posts.region(@province.id).each do |art|
+/         %li
+/           = art.title
+
+
+.span10.well
+  .span7
+    %ul.sort_category
+      %li 分类:
+      %li 不限
+      - Category.all.each do |category|
+        %li= category.name
+  .span7
+    - if not @category.nil?
+      %ul.sort_category
+        %li 分类:
+        %li 不限
+        - @category.sub_categories.each do |sub_category|
+          %li= sub_category.name
+  .span7
+    %ul.sort_category
+      %li 省份:
+      %li 不限
+      - @provinces.each do |province|
+        %li= province.name
+
+- if not @category.nil?
+  .span10
+    %table.table.table-striped
+      %tr
+        %th 标题
+        %th 发布日期
+      - @category.get_posts.each do |post|
+        %tr
+          %td= link_to post.title, "/post/#{post.id}.html"
+          %td= post.created_at.strftime('%Y-%m-%d %H:%M').to_s
