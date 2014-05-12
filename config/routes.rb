@@ -1,5 +1,4 @@
 RailsExamples::Application.routes.draw do
-
   devise_for :admins, only: [:session], :path => '/admin/', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
 
   devise_for :users
@@ -35,6 +34,23 @@ RailsExamples::Application.routes.draw do
     end
   end
 
+  scope '(:abbr)', :constraints => { :abbr => /[a-z]{2,3}/ } do
+    controller :front do
+      get '/' => :region
+      get '/res.html' => :region
+      get '/(:sort).html' => :sort, :constraints => { :sort => /jzc\d{1,2}s\d{1,2}p\d{1,2}/ }
+    end
+
+    controller :posts do
+      get '/post/(:id).html' => :show, :constraints => { :id => /\d{1,5}/ }
+    end
+
+    root :to => 'front#index'
+  end
+#  match '/(:sort).html' => 'front#sort', :constraints => { :sort => /jzc\d{1,2}s\d{1,2}p\d{1,2}/ }, :via => :get  # jzc0s2p1
+  
+#  match '/post/(:id).html' => 'posts#show', :constraints => { :id => /d{1,5}/ }, :via => :get
+
   resources :articles
   resources :segments
   resources :provinces
@@ -47,7 +63,8 @@ RailsExamples::Application.routes.draw do
   get "front/admin"
   get "front/region"
 
-  match '/:abbr' => 'front#region', :constraints => { :abbr => /[a-z]{2,5}/ }, :via => :get
+#  match '/:abbr' => 'front#region', :constraints => { :abbr => /[a-z]{2,5}/ }, :via => :get
+#  match '/:sort/res.html' => 'front#sort', :constraints => { :sort => /jzc\d{1,2}s\d{1,2}p\d{1,2}/ }, :via => :get  # jzc0s2p1
 
   constraints(Subdomain) do
     match '/' => 'front#region'

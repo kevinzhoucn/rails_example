@@ -6,3 +6,9 @@
   - if not @post.content.nil?
     = @post.content.html_safe
   
+.span7
+  %p= @post.title
+  %p
+    %b 内容:
+    - if not @post.content.nil?
+      = @post.content.html_safe

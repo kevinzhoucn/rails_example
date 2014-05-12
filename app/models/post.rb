@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
   attr_accessible :categroy_id, :sub_category_id, :title, :province_id, :user_id, :content
 
+  belongs_to :category
   belongs_to :sub_category
   belongs_to :province
   belongs_to :user

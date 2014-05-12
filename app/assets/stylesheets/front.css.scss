@@ -11,6 +11,16 @@
   min-height: 50px;
 }
 
+.sort_category{
+  list-style: none;
+  li:first-child {
+    font-weight: bold
+  }  
+  li {
+    float: left;
+    margin: 5px;
+  }  
+}
 .panel{
   margin-bottom: 20px;
   background-color: #fff;

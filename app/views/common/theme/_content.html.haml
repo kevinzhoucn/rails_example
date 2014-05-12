@@ -3,11 +3,20 @@
   .media-body.panel-body
     - @categories.each do |category|
       .span3
-        %h4= category.name
+        %h4
+          - if not province.nil?
+            - cat_path = "/#{province.abbr}/jzc#{category.id}s0p0.html"
+          - else
+            - cat_path = "/jzc#{category.id}s0p0.html"
+          =link_to category.name, cat_path, { style: "color: black" }
         %ul{style: "list-style: none;margin-left: 10px"}
           - category.sub_categories.each do |sub_category|
+            - if not province.nil?
+              - sub_cat_path = "/#{province.abbr}/jzc#{category.id}s#{sub_category.id}p0.html"
+            - else
+              - sub_cat_path = "/jzc#{category.id}s#{sub_category.id}p0.html"
             %li
-              =link_to sub_category.name, sub_category
+              =link_to sub_category.name, sub_cat_path
               - if province.nil?
                 %span.badge.badge-info= sub_category.posts.count
               - else
