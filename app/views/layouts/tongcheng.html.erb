@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>建筑同城网</title>  
+  <link href="<%= root_url %>css/tongcheng/Head.css" rel="stylesheet">
+  <link href="<%= root_url %>css/tongcheng/NewHead.css" rel="stylesheet">
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body role="document">
+  <%= render :partial => 'tongcheng/common/topbar' %>
+  <%= render :partial => 'tongcheng/common/head' %>
+
+  <%= yield %>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="<%= root_url %>js/tongcheng/jquery-1.8.2.min.js"></script>  
+  <script src="<%= root_url %>js/tongcheng/jquery.validate.min.js"></script>
+  <script src="<%= root_url %>js/tongcheng/jquery.noty.js"></script>
+  <script src="<%= root_url %>js/tongcheng/center.js"></script>
+  <%= javascript_include_tag "application" %>
+</body>
+</html>
