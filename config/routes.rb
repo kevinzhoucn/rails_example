@@ -2,51 +2,58 @@ RailsExamples::Application.routes.draw do
   devise_for :admins, only: [:session], :path => '/admin/', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
 
   devise_for :users
+  get "home/index"
 
-  namespace :tongcheng do
-    controller :front do
-      get '/' => :index
-    end
+  scope '/home', module: 'home' do
+    get "/" => :index
+    get "region"
+    get "publish"
   end
 
-  namespace :onecompany do
-    resources :products
-    resources :product_categories
+  # namespace :tongcheng do
+  #   controller :front do
+  #     get '/' => :index
+  #   end
+  # end
+
+  # namespace :onecompany do
+  #   resources :products
+  #   resources :product_categories
     
-    controller :front do
-      get '/' => :index
-    end
-  end
+  #   controller :front do
+  #     get '/' => :index
+  #   end
+  # end
 
-  namespace :maintain do
-    resources :customer_feedbacks
-    resources :invite_articles
-    #    resources :invite_users
-    controller :invite_articles do
-      get 'plan' => :plan
-    end
+  # namespace :maintain do
+  #   resources :customer_feedbacks
+  #   resources :invite_articles
+  #   #    resources :invite_users
+  #   controller :invite_articles do
+  #     get 'plan' => :plan
+  #   end
 
-    controller :invite do
-      get '/' => :index
-      get 'login' => :new
-      post 'login' => :create
-      delete 'logout' => :destory
-    end
-  end
+  #   controller :invite do
+  #     get '/' => :index
+  #     get 'login' => :new
+  #     post 'login' => :create
+  #     delete 'logout' => :destory
+  #   end
+  # end
 
-  scope '(:abbr)', :constraints => { :abbr => /[a-z]{2,3}/ } do
-    controller :front do
-      get '/' => :region
-      get '/res.html' => :region
-      get '/(:sort).html' => :sort, :constraints => { :sort => /jzc\d{1,2}s\d{1,2}p\d{1,2}/ }
-    end
+  # scope '(:abbr)', :constraints => { :abbr => /[a-z]{2,3}/ } do
+  #   controller :front do
+  #     get '/' => :region
+  #     get '/res.html' => :region
+  #     get '/(:sort).html' => :sort, :constraints => { :sort => /jzc\d{1,2}s\d{1,2}p\d{1,2}/ }
+  #   end
 
-    controller :posts do
-      get '/post/(:id).html' => :show, :constraints => { :id => /\d{1,5}/ }
-    end
+  #   controller :posts do
+  #     get '/post/(:id).html' => :show, :constraints => { :id => /\d{1,5}/ }
+  #   end
 
-    root :to => 'front#index'
-  end
+  #   root :to => 'home#index'
+  # end
 #  match '/(:sort).html' => 'front#sort', :constraints => { :sort => /jzc\d{1,2}s\d{1,2}p\d{1,2}/ }, :via => :get  # jzc0s2p1
   
 #  match '/post/(:id).html' => 'posts#show', :constraints => { :id => /d{1,5}/ }, :via => :get
@@ -58,17 +65,17 @@ RailsExamples::Application.routes.draw do
   resources :sub_categories
   resources :categories
   
-  get "front/index"
-  get "front/publish"
-  get "front/admin"
-  get "front/region"
+#   get "front/index"
+#   get "front/publish"
+#   get "front/admin"
+#   get "front/region"
 
-#  match '/:abbr' => 'front#region', :constraints => { :abbr => /[a-z]{2,5}/ }, :via => :get
-#  match '/:sort/res.html' => 'front#sort', :constraints => { :sort => /jzc\d{1,2}s\d{1,2}p\d{1,2}/ }, :via => :get  # jzc0s2p1
+# #  match '/:abbr' => 'front#region', :constraints => { :abbr => /[a-z]{2,5}/ }, :via => :get
+# #  match '/:sort/res.html' => 'front#sort', :constraints => { :sort => /jzc\d{1,2}s\d{1,2}p\d{1,2}/ }, :via => :get  # jzc0s2p1
 
-  constraints(Subdomain) do
-    match '/' => 'front#region'
-  end
+#   constraints(Subdomain) do
+#     match '/' => 'front#region'
+#   end
 
 #  match '/:id' => 'categories#show', :constraints => { :id => /\d.+/ }, :via => :get
 #  match '/:abbr' => 'users#show'
@@ -123,7 +130,8 @@ RailsExamples::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
-  root :to => 'front#index'
+  # root :to => 'front#index'
+  root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140311133809) do
+ActiveRecord::Schema.define(:version => 20140619081107) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -103,6 +103,57 @@ ActiveRecord::Schema.define(:version => 20140311133809) do
     t.string   "abbr",       :limit => 10, :null => false
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
+  end
+
+  create_table "rails3way_comments", :force => true do |t|
+    t.string   "title"
+    t.integer  "subject_id"
+    t.string   "subject_type"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "rails3way_expense_reports", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.integer  "rails3way_user_id"
+  end
+
+  add_index "rails3way_expense_reports", ["rails3way_user_id"], :name => "index_rails3way_expense_reports_on_rails3way_user_id"
+
+  create_table "rails3way_timesheets", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.integer  "rails3way_user_id"
+  end
+
+  add_index "rails3way_timesheets", ["rails3way_user_id"], :name => "index_rails3way_timesheets_on_rails3way_user_id"
+
+  create_table "rails3way_users", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "recipe_magazines", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "recipe_readers", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "recipe_subscriptions", :force => true do |t|
+    t.integer "recipe_reader_id"
+    t.integer "recipe_magazine_id"
+    t.date    "last_renewal_on"
+    t.integer "length_in_issues"
   end
 
   create_table "segments", :force => true do |t|
