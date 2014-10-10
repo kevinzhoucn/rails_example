@@ -2,13 +2,33 @@ RailsExamples::Application.routes.draw do
   devise_for :admins, only: [:session], :path => '/admin/', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
 
   devise_for :users
-  get "home/index"
+  get 'home/index'
+  get 'home/publish'
+  match '/publish/:type' => 'home#publish', :via => :get
+  match '/publish/:type/add' => 'home#add', :via => :get, :as => :home_publish_add
 
-  scope '/home', module: 'home' do
-    get "/" => :index
-    get "region"
-    get "publish"
+  scope '(home)' do
+    controller :home do
+      get '/' => :index
+
+      get '/publish', :action => 'publish', :as => :home_publish
+      match '/zizhi/daiban', :action => 'zizhi'
+      match '/zizhi/zhuanrang', :action => 'zizhi'
+      match '/zizhi/guakao', :action => 'zizhi'
+    end
   end
+  # get 'home/publish'
+  # get 'home/publish/:type'
+
+  # scope '(home)', module: 'home' do
+  #   get '/' => :index
+  #   get 'region'
+  #   get '/publish', :action => 'publish', :as => :home_publish
+  #   get '/publish/:type', :action => 'publish', :constraints => { :type => /[1,11]/ }
+  #   match '/zizhi/daiban', :action => 'zizhi'
+  #   match '/zizhi/zhuanrang', :action => 'zizhi'
+  #   match '/zizhi/guakao', :action => 'zizhi'
+  # end
 
   # namespace :tongcheng do
   #   controller :front do

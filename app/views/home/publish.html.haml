@@ -1,2 +1,6 @@
-%h1 Home#publish
-%p Find me in app/views/home/publish.html.haml
+- if not @type_id
+  = render partial: 'home/publish_templates/content_type'
+
+- if @type_id
+  - if @type_id = 1
+    = render partial: 'home/publish_templates/content_type_01'
