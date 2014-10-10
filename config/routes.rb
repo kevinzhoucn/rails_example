@@ -6,6 +6,7 @@ RailsExamples::Application.routes.draw do
   get 'home/publish'
   match '/publish/:type' => 'home#publish', :via => :get
   match '/publish/:type/add' => 'home#add', :via => :get, :as => :home_publish_add
+  match 'records/create' => 'home#create', :via => :post, :as => :home_records
 
   scope '(home)' do
     controller :home do

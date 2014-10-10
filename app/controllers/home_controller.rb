@@ -17,6 +17,14 @@ class HomeController < AppjianzhuController
   end
 
   def add
+    @record = Record.new
 
+    respond_to do |format|
+      format.html # add.html.haml
+    end
+  end
+
+  def create
+    
   end
 end

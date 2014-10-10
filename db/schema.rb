@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140619081107) do
+ActiveRecord::Schema.define(:version => 20141010083916) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -154,6 +154,18 @@ ActiveRecord::Schema.define(:version => 20140619081107) do
     t.integer "recipe_magazine_id"
     t.date    "last_renewal_on"
     t.integer "length_in_issues"
+  end
+
+  create_table "records", :force => true do |t|
+    t.string   "title"
+    t.string   "locate_province"
+    t.string   "locate_city"
+    t.string   "register_status"
+    t.string   "price"
+    t.string   "job_title"
+    t.string   "details"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "segments", :force => true do |t|
