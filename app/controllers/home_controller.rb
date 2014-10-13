@@ -1,5 +1,6 @@
 class HomeController < AppjianzhuController
   def index
+
   end
 
   def region
@@ -13,7 +14,7 @@ class HomeController < AppjianzhuController
   end
 
   def zizhi
-    
+    @records = Record.all
   end
 
   def add
@@ -25,6 +26,16 @@ class HomeController < AppjianzhuController
   end
 
   def create
-    
+    @record = Record.new(params[:record])
+
+    respond_to do |format|
+      if @record.save
+        format.html { redirect_to zizhi_daiban_path, notice: t('.record_created_successfully.') }
+        # format.json { render json: @maintain_invite_article, status: :created, location: @maintain_invite_article }
+      else
+        format.html { render action: "add" }
+        # format.json { render json: @maintain_invite_article.errors, status: :unprocessable_entity }
+      end
+    end 
   end
 end

@@ -13,7 +13,7 @@ RailsExamples::Application.routes.draw do
       get '/' => :index
 
       get '/publish', :action => 'publish', :as => :home_publish
-      match '/zizhi/daiban', :action => 'zizhi'
+      match '/zizhi/daiban', :action => 'zizhi', :as => :zizhi_daiban
       match '/zizhi/zhuanrang', :action => 'zizhi'
       match '/zizhi/guakao', :action => 'zizhi'
     end
