@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  locate_province: MyString
+  locate_city: MyString
+  register_status: MyString
+  price: MyString
+  job_title: MyString
+  details: MyString
+
+two:
+  title: MyString
+  locate_province: MyString
+  locate_city: MyString
+  register_status: MyString
+  price: MyString
+  job_title: MyString
+  details: MyString

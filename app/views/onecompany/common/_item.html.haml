@@ -1,0 +1,7 @@
+%ul{style: "list-style:none"}
+  - products.each_with_index do |product, index|
+    %li{style: "float:left"}
+      .product-item
+        = link_to product.name, product
+        %br/
+        = image_tag product.avatar.url(:thumb), class: "img-rounded"

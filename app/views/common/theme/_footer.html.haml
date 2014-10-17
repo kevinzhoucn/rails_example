@@ -4,12 +4,13 @@
   .maintain.row
     %ul
       %li
-        = link_to "网站管理"
+        = link_to "网站管理", front_admin_path
         |
+        - if current_admin
+          = link_to "退出管理", destroy_admin_session_path, { method: :delete}
+          |
         = link_to "意见反馈", maintain_path
   .address.row
     %ul
-      %li www.abc.com
-      %li 版权所有: 中国资质
       %li 技术支持: 中国资质
-      %li 协会电话: 010-xxxxxxxx
+      %li 联系电话: 010-xxxxxxxx

@@ -1,28 +1,39 @@
 .navbar.navbar-fixed-top
   .navbar-inner
     .container
-      = link_to '建筑同城网', root_url(:subdomain => false), class: 'brand'
+      = link_to '建筑同城网', root_url(:subdomain => "www"), class: 'brand'
       %ul.nav
         %li.active
-          = link_to '首页', root_url(:host => request.domain)
+          = link_to '首页', root_url(:subdomain => "www")
         %li
-          %a{href: '#'} 关于我们
-        %li
-          %a{href: '#'} 联系我们
-        %li.dropdown
-          %a.dropdown-toggle{href: '#', data: {toggle: 'dropdown'}} 
-            选择城市
-            %b.caret
-          %ul.dropdown-menu            
-            - @provinces.each do |province|
-              %li
-                = link_to province.name, root_url(:subdomain => province.abbr), {tabindex: "-1"}
-            %li.divider
-            %li
-              = link_to '添加城市', new_province_path, {tabindex: "-1"} 
+          %a 
+        %li{style: "line-height: 40px"}
+          = form_tag posts_path, method: :get, style: "margin:0px" do 
+            = text_field_tag 'search', nil, { placeholder: '搜索框...', style: "margin-bottom: 0px" }
+            = submit_tag "搜索", name: nil, class: "btn btn-info btn-small", style: "margin:0px"
+          / = simple_form_for :search, html: {class: "form-inline"} do |f|
+          /   = f.input :query, class: "input-medium search-query", label: false, input_html: {style: "display:inline-block;margin_bottom:0;vertical-align:middle"}
+          /   = f.submit "搜索", class: "btn"
+        / %li.dropdown
+        /   %a.dropdown-toggle{href: '#', data: {toggle: 'dropdown'}} 
+        /     选择城市
+        /     %b.caret
+        /   %ul.dropdown-menu            
+        /     - @provinces.each do |province|
+        /       %li
+        /         = link_to province.name, root_url(:subdomain => province.abbr), {tabindex: "-1"}
+        /     %li.divider
+        /     %li
+        /       = link_to '添加城市', new_province_path, {tabindex: "-1"} 
       %ul.nav.pull-right
         %li
-          %a{href: "#{root_url(:host => request.domain)}", style: "padding-right:0px"} 登录
+          - if !current_user
+            %a{href: "#{new_user_session_path}", style: "padding-right:0px"} 登录
+          - if current_user
+            %a{href: "#", style: "padding-right:0px"} 欢迎 #{current_user.email}
         %li.divider-vertical
         %li
-          %a{href: '#', style: "padding-left:0px"} 注册
+          - if current_user
+            = link_to '退出', destroy_user_session_path, { method: :delete, style: "padding-left: 0px" }
+          - if !current_user
+            %a{href: "#{new_user_registration_path}", style: "padding-left:0px"} 注册

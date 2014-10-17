@@ -1,6 +1,9 @@
 zh-CN:
-  maintain_invalid_test_code: "输入代码有误, 请重新输入"
+  maintain_invalid_test_code: "输入代码有误, 请重新输入!"
+  tester_logged_out: "成功退出!"
   invite_article_created_successfully: "成功创建文章!"
+  post_successfully_created: "成功发布帖子!"
+  post_successfully_updated: "成功更新帖子!"
 
   layouts:
     application:
@@ -43,15 +46,25 @@ zh-CN:
   devise:
     sessions:
       new:
+        submit: ""
         
       user:
-        signed_in: "已成功登录"
+        signed_in: "用户已成功登录"
         signed_out: "已退出登录"
-    failure:
+      admin:
+        signed_in: "管理员成功登录"
+        signed_out: "已退出登录"
+    registrations:
       user:
-        unauthenticated: "您没有授权访问资源"
+        signed_up: "成功注册"
+    failure:
+      admin:
+        unauthenticated: "管理员登录"
+      user:
+        unauthenticated: "请您登录"
         not_found_in_database: "用户不可用"
         invalid: "用户名或密码错误"
+      already_authenticated: "您已经成功登录"      
   will_paginate:
     previous_label: "&#8592; 前一页"
     next_label: "后一页 &#8594;"

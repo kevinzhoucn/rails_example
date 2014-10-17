@@ -1,0 +1,11 @@
+= simple_form_for(@onecompany_product, :html => { :multipart => true } ) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :content, as: :text
+    = f.association :onecompany_product_category, label: "产品类别", collection: (Onecompany::ProductCategory).all, prompt: "选择产品类别"
+    = f.input :avatar, as: :file
+
+  .form-actions
+    = f.button :submit

@@ -1,0 +1,25 @@
+%h1 Listing onecompany_products
+
+%table
+  %tr
+    %th Name
+    %th Content
+    %th Img url
+    %th Onecompany product category
+    %th
+    %th
+    %th
+
+  - @onecompany_products.each do |onecompany_product|
+    %tr
+      %td= onecompany_product.name
+      %td= onecompany_product.content
+      %td= onecompany_product.img_url
+      %td= onecompany_product.onecompany_product_category_id
+      %td= link_to 'Show', onecompany_product
+      %td= link_to 'Edit', edit_onecompany_product_path(onecompany_product)
+      %td= link_to 'Destroy', onecompany_product, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Product', new_onecompany_product_path

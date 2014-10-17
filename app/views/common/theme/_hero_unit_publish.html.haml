@@ -8,4 +8,7 @@
       %span{style: "font-size:80%"} (全国)
   %p
     =link_to '个人发布 »', front_publish_path, class: 'btn btn-primary btn-small'
-    %a.btn.btn-success.btn-small 公司发布 »
+    / %a.btn.btn-success.btn-small 公司发布 »
+    
+.row-fluid{data: {desc: "province_unit"}}
+  = render partial: 'common/theme/province_unit', object: @provinces

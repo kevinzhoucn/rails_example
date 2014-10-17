@@ -30,6 +30,13 @@ group :assets do
   # gem 'twitter-bootstrap-rails'
 end
 
+group :test do
+  gem 'cucumber-rails'
+  gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'factory_girl'
+end
+
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'haml-rails'
@@ -37,6 +44,8 @@ gem 'simple_form'
 gem 'devise'
 gem 'will_paginate'
 gem 'bootstrap-sass'
+gem 'paperclip', '~> 3.5.3'
+#gem 'paperclip', '~> 4.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -54,7 +63,7 @@ gem 'bootstrap-sass'
 # gem 'debugger'
 
 # This version needs to be hardcoded for OpenShift compatibility
-gem 'thor', '= 0.14.6'
+#gem 'thor', '= 0.14.6'
 
 # This needs to be installed so we can run Rails console on OpenShift directly
-gem 'minitest'
+#gem 'minitest'
