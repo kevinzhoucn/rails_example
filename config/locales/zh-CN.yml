@@ -46,6 +46,7 @@ zh-CN:
   devise:
     sessions:
       new:
+        submit: ""
         
       user:
         signed_in: "用户已成功登录"
